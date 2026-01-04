@@ -3,59 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grow Wise Press</title>
+    <title>Grow Wise Press | Wisdom for All Ages</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Simple, Clean Design Styles */
-        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
-        header { background-color: #f8f9fa; padding: 60px 20px; text-align: center; }
-        h1 { font-size: 2.5em; margin-bottom: 10px; color: #2c3e50; }
-        h2 { text-align: center; color: #2c3e50; margin-top: 50px; }
-        .subtitle { font-size: 1.2em; color: #666; max-width: 600px; margin: 0 auto; }
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap');
         
-        /* Book Grid Section */
-        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
-        .book-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 40px; }
-        .book-card { text-align: center; border: 1px solid #eee; padding: 20px; border-radius: 8px; transition: transform 0.2s; }
-        .book-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .book-cover { width: 100%; height: 350px; background-color: #ddd; object-fit: cover; border-radius: 4px; margin-bottom: 15px; }
-        
-        /* Email Subscribe Section */
-        .subscribe-section { background-color: #eef2f5; padding: 50px 20px; text-align: center; margin-top: 60px; }
-        .subscribe-form { max-width: 500px; margin: 20px auto; }
-        
-        /* Footer */
-        footer { text-align: center; padding: 20px; font-size: 0.9em; color: #888; margin-top: 40px; border-top: 1px solid #eee; }
-        
-        /* Button Style */
-        .btn { display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Merriweather', serif;
+        }
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
 
-    <header>
-        <h1>Grow Wise Press</h1>
-        <p class="subtitle">Inspiring books for all ages. Stories that help you grow.</p>
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-900 flex items-center gap-2">
+                <i class="fas fa-book-open"></i> Grow Wise Press
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#books" class="text-gray-600 hover:text-indigo-900 transition">Books</a>
+                <a href="#about" class="text-gray-600 hover:text-indigo-900 transition">About</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-900 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-indigo-900 text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Timeless Wisdom for Modern Minds</h1>
+            <p class="text-xl opacity-90 mb-8">Inspiring children and adults through spiritual heritage and healthy living.</p>
+            <a href="#books" class="bg-white text-indigo-900 px-8 py-3 rounded-full font-semibold hover:bg-indigo-100 transition shadow-lg">View Our Collection</a>
+        </div>
     </header>
 
-    <div class="container">
-        <h2>Our Books</h2>
-        <div class="book-grid">
+    <section id="books" class="py-16 container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Our Publications</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
-            <div class="book-card">
-                <img src="https://via.placeholder.com/250x350?text=Book+Cover+1" alt="Book One" class="book-cover">
-                <h3>First book</h3>
-                <p>A short description of this book goes here. It is perfect for children and adults alike.</p>
-                <a href="#" class="btn">Read More</a>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 book-card border border-gray-100">
+                <div class="h-64 bg-gray-200 flex items-center justify-center text-gray-400">
+                    <img src="https://via.placeholder.com/300x400?text=Guru+Stotram" alt="Guru Stotram Cover" class="h-full w-full object-cover">
+                </div>
+                <div class="p-6">
+                    <span class="text-xs font-bold text-indigo-500 uppercase tracking-wider">Children's Spirituality</span>
+                    <h3 class="text-xl font-bold mt-2 mb-2">The Guru Stotram</h3>
+                    <p class="text-gray-600 text-sm mb-4">Teaching children the importance of the teacher and guide through ancient verses.</p>
+                    <button class="w-full bg-indigo-900 text-white py-2 rounded hover:bg-indigo-800 transition">Learn More</button>
+                </div>
             </div>
 
-            <div class="book-card">
-                <img src="https://via.placeholder.com/250x350?text=Book+Cover+2" alt="Book Two" class="book-cover">
-                <h3>The Second Book Title</h3>
-                <p>Another amazing story generated by Gemini. Join the adventure in this exciting tale.</p>
-                <a href="#" class="btn">Read More</a>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 book-card border border-gray-100">
+                <div class="h-64 bg-gray-200 flex items-center justify-center text-gray-400">
+                    <img src="https://via.placeholder.com/300x400?text=Gayatri+Mantra" alt="Gayatri Mantra Cover" class="h-full w-full object-cover">
+                </div>
+                <div class="p-6">
+                    <span class="text-xs font-bold text-indigo-500 uppercase tracking-wider">Children's Spirituality</span>
+                    <h3 class="text-xl font-bold mt-2 mb-2">Gayatri Mantra: The Song of Light</h3>
+                    <p class="text-gray-600 text-sm mb-4">Illuminating young minds with the power of the sun and universal wisdom.</p>
+                    <button class="w-full bg-indigo-900 text-white py-2 rounded hover:bg-indigo-800 transition">Learn More</button>
+                </div>
             </div>
 
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 book-card border border-gray-100">
+                <div class="h-64 bg-gray-200 flex items-center justify-center text-gray-400">
+                    <img src="https://via.placeholder.com/300x400?text=Ganesha+Shloka" alt="Ganesha Shloka Cover" class="h-full w-full object-cover">
+                </div>
+                <div class="p-6">
+                    <span class="text-xs font-bold text-indigo-500 uppercase tracking-wider">Children's Spirituality</span>
+                    <h3 class="text-xl font-bold mt-2 mb-2">Ganesha: Remover of Obstacles</h3>
+                    <p class="text-gray-600 text-sm mb-4">A colorful journey introducing the beloved deity Ganesha to children.</p>
+                    <button class="w-full bg-indigo-900 text-white py-2 rounded hover:bg-indigo-800 transition">Learn More</button>
+                </div>
             </div>
+
+            <div class="bg-white rounded-xl shadow-md overflow-hidden transition duration-300 book-card border border-gray-100">
+                <div class="h-64 bg-gray-200 flex items-center justify-center text-gray-400">
+                    <img src="https://via.placeholder.com/300x400?text=Reclaim+Health" alt="Reclaim Your Health Cover" class="h-full w-full object-cover">
+                </div>
+                <div class="p-6">
+                    <span class="text-xs font-bold text-green-600 uppercase tracking-wider">Health & Wellness</span>
+                    <h3 class="text-xl font-bold mt-2 mb-2">Reclaim Your Health</h3>
+                    <p class="text-gray-600 text-sm mb-4">The 'No Body Cares' Plan. A no-nonsense guide to taking charge of your physical well-being.</p>
+                    <button class="w-full bg-indigo-900 text-white py-2 rounded hover:bg-indigo-800 transition">Learn More</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" class="bg-indigo-50 py-16">
+        <div class="container mx-auto px-6 text-center max-w-2xl">
+            <h2 class="text-3xl font-bold text-indigo-900 mb-6">About Grow Wise Press</h2>
+            <p class="text-gray-700 leading-relaxed mb-6">
+                At Grow Wise Press, we believe in the power of ancient wisdom to navigate modern life. From introducing children to the profound beauty of concepts like <em>Shakti</em>, <em>Bhakti</em>, and <em>Aparigrah</em>, to helping adults reclaim their physical vitality, our mission is to publish content that enriches the soul and strengthens the body.
+            </p>
+            <p class="text-gray-700 font-semibold">
+                Dedicated to the next generation.
+            </p>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-gray-800 text-white py-10 mt-auto">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold mb-4">Grow Wise Press</h3>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="hover:text-indigo-400 transition"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="hover:text-indigo-400 transition"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="#" class="hover:text-indigo-400 transition"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="mailto:contact@growwisepress.com" class="hover:text-indigo-400 transition"><i class="fas fa-envelope fa-lg"></i></a>
+            </div>
+            <p class="text-gray-400 text-sm">&copy; 2026 Grow Wise Press. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+
     </div>
 
     <div class="subscribe-section">
