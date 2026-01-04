@@ -1,214 +1,52 @@
-/* RESET & BASICS */
-* {
+/* style.css */
+
+/* IMPORT NEW FONTS: Playfair Display (Elegant Serif) & Lato (Clean Sans) */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* Base Styles */
+body {
+    font-family: 'Lato', sans-serif; /* Clean, modern body text */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Nunito', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #fff;
 }
 
-h1, h2, h3, .logo {
-    font-family: 'Fredoka', sans-serif; /* A friendly, rounded font */
+/* Headings use the elegant "Book Title" font */
+h1, h2, h3, h4, .font-serif {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.5px; /* Slight tightening for a premium look */
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* NAVIGATION */
-.navbar {
-    background: #fff;
-    padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    position: sticky;
+/* LIVE BACKGROUND ANIMATION */
+.live-bg {
+    position: fixed;
     top: 0;
-    z-index: 1000;
-}
-
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #ff6f61; /* Brand Color */
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin-left: 20px;
-}
-
-.nav-links a:hover {
-    color: #ff6f61;
-}
-
-/* HERO SECTION */
-.hero {
-    background-color: #fdf6e3; /* Soft cream background */
-    padding: 100px 0;
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    color: #2c3e50;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #555;
-}
-
-/* BUTTONS */
-.btn-primary {
-    display: inline-block;
-    background: #ff6f61;
-    color: #fff;
-    padding: 12px 30px;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: background 0.3s;
-}
-
-.btn-primary:hover {
-    background: #e65b50;
-}
-
-.btn-secondary {
-    display: inline-block;
-    background: transparent;
-    border: 2px solid #ff6f61;
-    color: #ff6f61;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    margin-top: 10px;
-}
-
-.btn-secondary:hover {
-    background: #ff6f61;
-    color: #fff;
-}
-
-/* SECTIONS */
-.section {
-    padding: 80px 0;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    color: #2c3e50;
-}
-
-.bg-light {
-    background-color: #f9f9f9;
-}
-
-/* BOOK GRID */
-.book-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.book-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    text-align: center;
-    transition: transform 0.3s;
-}
-
-.book-card:hover {
-    transform: translateY(-5px);
-}
-
-.book-cover-placeholder {
+    left: 0;
     width: 100%;
-    height: 300px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-weight: bold;
-    font-size: 1.2rem;
+    height: 100%;
+    z-index: -1;
+    /* Soft Gradient: Saffron, Cream, Pale Teal */
+    background: linear-gradient(-45deg, #fff7ed, #fed7aa, #f0fdf4, #fffbeb);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
 }
 
-.book-desc {
-    margin: 10px 0 20px 0;
-    color: #666;
-    font-size: 0.95rem;
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-/* ABOUT CONTENT */
-.about-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 1.1rem;
+/* CARD HOVER EFFECTS */
+.book-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(234, 88, 12, 0.15);
 }
 
-.about-content p {
-    margin-bottom: 20px;
-}
-
-/* FORM */
-.signup-form {
-    margin-top: 20px;
-}
-
-.signup-form input {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 30px;
-    width: 300px;
-    max-width: 100%;
-    margin-right: 10px;
-}
-
-/* FOOTER */
-footer {
-    background: #2c3e50;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .signup-form input {
-        margin-bottom: 10px;
-        width: 100%;
-    }
+/* SUBSCRIPTION BOX STYLE */
+.subscribe-section {
+    background-color: rgba(255, 255, 255, 0.85); /* Slightly more opaque for readability */
+    backdrop-filter: blur(8px);
+    border-top: 1px solid #fed7aa;
+    border-bottom: 1px solid #fed7aa;
 }
