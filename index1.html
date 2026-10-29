@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowWisePress | Igniting Curiosity. Preserving Culture. Simple Truths for Real Growth.</title>
+    <meta name="description" content="Official website of GrowWisePress and author Sridhar H. Patel. Explore UNFED, Stillness in Motion, The Daily Mindful Pause, and HANUMAN.">
+    <meta property="og:title" content="GrowWisePress | Books by Sridhar H. Patel">
+    <meta property="og:description" content="Igniting Curiosity. Preserving Culture. Simple Truths for Real Growth. Explore our books on health, daily mindfulness, and cultural wisdom.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.GrowWisePress.com">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* IMPORT FONTS: Playfair Display (Elegant Book Title Serif) & Lato (Clean Modern Sans) */
+        @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.65;
+        }
+
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: -0.3px;
+        }
+
+        /* LIVE ANIMATED BACKGROUND WALLPAPER */
+        .live-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(-45deg, #fff7ed, #ffedd5, #f0fdf4, #f0fdfa, #fffbeb);
+            background-size: 400% 400%;
+            animation: gradientBG 16s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* BOOK CARD HOVER & 3D SPINE EFFECT */
+        .book-card {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .book-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(234, 88, 12, 0.14);
+        }
+
+        /* FROSTED GLASS SECTIONS */
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(10px);
+        }
+
+        .subscribe-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid #fed7aa;
+            border-bottom: 1px solid #fed7aa;
+        }
+    </style>
+</head>
+<body class="text-stone-800 flex flex-col min-h-screen">
+
+    <!-- LIVE ANIMATED GRADIENT BACKGROUND -->
+    <div class="live-bg"></div>
+
+    <!-- STICKY NAVIGATION BAR -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-orange-100 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl md:text-3xl font-bold text-orange-700 flex items-center gap-3 font-serif">
+                <i class="fas fa-seedling text-orange-600"></i> GrowWisePress
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#books" class="text-stone-700 hover:text-orange-600 transition font-bold text-xs uppercase tracking-widest">Books</a>
+                <a href="#resources" class="text-stone-700 hover:text-orange-600 transition font-bold text-xs uppercase tracking-widest">Free Guides</a>
+                <a href="#author" class="text-stone-700 hover:text-orange-600 transition font-bold text-xs uppercase tracking-widest">Author</a>
+                <a href="#about" class="text-stone-700 hover:text-orange-600 transition font-bold text-xs uppercase tracking-widest">About</a>
+                <a href="#subscribe" class="bg-orange-600 text-white px-5 py-2.5 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-orange-700 transition shadow-sm">Join Readers</a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden text-orange-700 text-2xl focus:outline-none" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-b border-orange-100 px-6 py-4 space-y-3">
+            <a href="#books" onclick="toggleMobileMenu()" class="block text-stone-700 hover:text-orange-600 font-bold text-sm uppercase tracking-wider">Books</a>
+            <a href="#resources" onclick="toggleMobileMenu()" class="block text-stone-700 hover:text-orange-600 font-bold text-sm uppercase tracking-wider">Free Guides</a>
+            <a href="#author" onclick="toggleMobileMenu()" class="block text-stone-700 hover:text-orange-600 font-bold text-sm uppercase tracking-wider">About the Author</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block text-stone-700 hover:text-orange-600 font-bold text-sm uppercase tracking-wider">About GrowWisePress</a>
+            <a href="#subscribe" onclick="toggleMobileMenu()" class="block text-orange-600 font-bold text-sm uppercase tracking-wider">Join Our Readers</a>
+        </div>
+    </nav>
+
+    <!-- HERO HEADER -->
+    <header class="py-20 md:py-28 relative">
+        <div class="container mx-auto px-6 text-center max-w-4xl">
+            <span class="inline-block bg-orange-100 text-orange-800 border border-orange-200 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+                Igniting Curiosity • Preserving Culture • Simple Truths for Real Growth
+            </span>
+            <h1 class="text-4xl md:text-7xl font-bold mb-6 font-serif text-stone-900 drop-shadow-sm leading-tight">
+                Timeless Wisdom for<br>Modern Minds
+            </h1>
+            <p class="text-lg md:text-2xl text-stone-700 mb-10 font-light max-w-2xl mx-auto">
+                Practical, plain-language books by <strong>Sridhar H. Patel</strong> that bridge generational wisdom and everyday science for a strong body, a calm mind, and a courageous heart.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#books" class="bg-orange-600 text-white px-9 py-4 rounded-full font-bold hover:bg-orange-700 transition shadow-lg inline-block transform hover:scale-105 duration-200 uppercase tracking-wider text-sm">
+                    Explore Our 4 Books
+                </a>
+                <a href="#resources" class="bg-white text-stone-800 border border-orange-200 px-9 py-4 rounded-full font-bold hover:bg-orange-50 transition shadow-sm inline-block uppercase tracking-wider text-sm">
+                    Free Reader Printables
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- BOOKS SHOWCASE SECTION -->
+    <section id="books" class="py-12 container mx-auto px-6">
+        <div class="glass-panel rounded-3xl p-8 md:p-12 shadow-sm border border-white/60">
+            <div class="text-center mb-10">
+                <h2 class="text-4xl md:text-5xl font-bold text-stone-800 mb-3 font-serif">Our Publications</h2>
+                <p class="text-stone-600 max-w-xl mx-auto">Complete collection available in Paperback and Hardcover editions.</p>
+                <div class="w-24 h-1 bg-orange-500 mx-auto mt-4 rounded"></div>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-12">
+                <button onclick="filterBooks('all')" id="filter-all" class="filter-btn bg-orange-600 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition shadow-sm">
+                    All Books (4)
+                </button>
+                <button onclick="filterBooks('health')" id="filter-health" class="filter-btn bg-white text-stone-700 hover:bg-orange-50 border border-stone-200 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition">
+                    Health & Habits
+                </button>
+                <button onclick="filterBooks('mindfulness')" id="filter-mindfulness" class="filter-btn bg-white text-stone-700 hover:bg-orange-50 border border-stone-200 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition">
+                    Daily Mindfulness (365)
+                </button>
+                <button onclick="filterBooks('children')" id="filter-children" class="filter-btn bg-white text-stone-700 hover:bg-orange-50 border border-stone-200 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider transition">
+                    Children & Family
+                </button>
+            </div>
+
+            <!-- 4-BOOK GRID -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- BOOK 1: UNFED -->
+                <div data-category="health" class="book-item bg-white rounded-2xl shadow-md overflow-hidden book-card border border-stone-100 flex flex-col">
+                    <div class="h-80 bg-gradient-to-br from-emerald-900 via-emerald-800 to-teal-900 flex items-center justify-center relative group overflow-hidden p-6 text-center">
+                        <!-- Upload unfed-cover.jpg to GitHub to automatically replace the styled cover below -->
+                        <img src="unfed-cover.jpg" alt="UNFED Book Cover" class="absolute inset-0 h-full w-full object-cover z-10" onerror="this.style.display='none'">
+                        <div class="border border-emerald-400/40 rounded-lg p-5 w-full h-full flex flex-col justify-between text-white">
+                            <span class="text-[10px] uppercase tracking-widest text-emerald-300 font-bold">23 Simple Rules • 100-Day Plan</span>
+                            <div>
+                                <h4 class="text-4xl font-bold font-serif tracking-wider text-white mb-2">UNFED</h4>
+                                <div class="w-10 h-0.5 bg-emerald-400 mx-auto mb-2"></div>
+                                <p class="text-xs text-emerald-100 leading-snug">The "No Body Cares" Plan to Escape the Food Trap, Build Simple Habits, and Reclaim Your Strength</p>
+                            </div>
+                            <span class="text-xs font-semibold tracking-widest uppercase text-emerald-200">Sridhar H. Patel</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-emerald-700 uppercase tracking-widest">Health & Vitality</span>
+                            <span class="text-[11px] bg-emerald-50 text-emerald-800 px-2.5 py-0.5 rounded font-semibold">Ages 8–80</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-1 font-serif text-stone-900">UNFED</h3>
+                        <p class="text-xs font-semibold text-stone-500 mb-3 italic">The "No Body Cares" Plan to Escape the Food Trap, Build Simple Habits, and Reclaim Your Strength</p>
+                        <p class="text-stone-600 text-sm mb-5 flex-grow leading-relaxed">
+                            Blending four generations of family longevity wisdom with 23 Simple Rules and a 100-Day Action Plan to put clean eating and strength on effortless autopilot.
+                        </p>
+                        <div class="text-[11px] text-stone-400 mb-4 border-t border-stone-100 pt-2">
+                            <div><strong>Paperback ISBN:</strong> 979-8-954002-00-3</div>
+                            <div><strong>Hardcover ISBN:</strong> 979-8-954002-01-0</div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="openBookModal('unfed')" class="bg-stone-100 text-stone-800 py-2.5 px-3 rounded-lg hover:bg-stone-200 transition font-bold text-xs uppercase tracking-wider">
+                                Look Inside
+                            </button>
+                            <a href="https://www.amazon.com/s?k=9798954002003" target="_blank" rel="noopener" class="bg-emerald-700 text-white py-2.5 px-3 rounded-lg hover:bg-emerald-800 transition font-bold text-xs uppercase tracking-wider text-center shadow">
+                                Buy Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOOK 2: STILLNESS IN MOTION -->
+                <div data-category="mindfulness" class="book-item bg-white rounded-2xl shadow-md overflow-hidden book-card border border-stone-100 flex flex-col">
+                    <div class="h-80 bg-gradient-to-br from-amber-700 via-orange-700 to-stone-900 flex items-center justify-center relative group overflow-hidden p-6 text-center">
+                        <!-- Upload stillness-cover.jpg to GitHub to automatically replace the styled cover below -->
+                        <img src="stillness-cover.jpg" alt="Stillness in Motion Book Cover" class="absolute inset-0 h-full w-full object-cover z-10" onerror="this.style.display='none'">
+                        <div class="border border-amber-300/40 rounded-lg p-5 w-full h-full flex flex-col justify-between text-white">
+                            <span class="text-[10px] uppercase tracking-widest text-amber-200 font-bold">365-Day Desk Companion</span>
+                            <div>
+                                <h4 class="text-2xl font-bold font-serif tracking-wide text-white mb-2">STILLNESS IN MOTION</h4>
+                                <div class="w-10 h-0.5 bg-amber-400 mx-auto mb-2"></div>
+                                <p class="text-xs text-amber-100 leading-snug">365 Days of Ancient Bhagavad Gita Wisdom for a Calm Mind and Purposeful Living</p>
+                            </div>
+                            <span class="text-xs font-semibold tracking-widest uppercase text-amber-200">Sridhar H. Patel</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-orange-700 uppercase tracking-widest">Daily Wisdom</span>
+                            <span class="text-[11px] bg-orange-50 text-orange-800 px-2.5 py-0.5 rounded font-semibold">365 Days</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-1 font-serif text-stone-900">Stillness in Motion</h3>
+                        <p class="text-xs font-semibold text-stone-500 mb-3 italic">365 Days of Ancient Bhagavad Gita Wisdom for a Calm Mind and Purposeful Living</p>
+                        <p class="text-stone-600 text-sm mb-5 flex-grow leading-relaxed">
+                            Act with 100% focus on the outside while remaining completely peaceful on the inside. Each day pairs a sharp morning question with a timeless teaching and habit.
+                        </p>
+                        <div class="text-[11px] text-stone-400 mb-4 border-t border-stone-100 pt-2">
+                            <div><strong>Paperback ISBN:</strong> 979-8-954002-02-7</div>
+                            <div><strong>Hardcover/eBook:</strong> 979-8-954002-03-4</div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="openBookModal('stillness')" class="bg-stone-100 text-stone-800 py-2.5 px-3 rounded-lg hover:bg-stone-200 transition font-bold text-xs uppercase tracking-wider">
+                                Look Inside
+                            </button>
+                            <a href="https://www.amazon.com/s?k=9798954002027" target="_blank" rel="noopener" class="bg-orange-600 text-white py-2.5 px-3 rounded-lg hover:bg-orange-700 transition font-bold text-xs uppercase tracking-wider text-center shadow">
+                                Buy Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOOK 3: THE DAILY MINDFUL PAUSE -->
+                <div data-category="mindfulness" class="book-item bg-white rounded-2xl shadow-md overflow-hidden book-card border border-stone-100 flex flex-col">
+                    <div class="h-80 bg-gradient-to-br from-teal-800 via-cyan-900 to-slate-900 flex items-center justify-center relative group overflow-hidden p-6 text-center">
+                        <!-- Upload mindful-pause-cover.jpg to GitHub to automatically replace the styled cover below -->
+                        <img src="mindful-pause-cover.jpg" alt="The Daily Mindful Pause Book Cover" class="absolute inset-0 h-full w-full object-cover z-10" onerror="this.style.display='none'">
+                        <div class="border border-teal-300/40 rounded-lg p-5 w-full h-full flex flex-col justify-between text-white">
+                            <span class="text-[10px] uppercase tracking-widest text-teal-200 font-bold">60-Second Daily Reset</span>
+                            <div>
+                                <h4 class="text-2xl font-bold font-serif tracking-wide text-white mb-2">THE DAILY MINDFUL PAUSE</h4>
+                                <div class="w-10 h-0.5 bg-teal-400 mx-auto mb-2"></div>
+                                <p class="text-xs text-teal-100 leading-snug">365 Thought-Provoking Questions & Ancient Buddhist Wisdom for Calm, Clarity, and Focus</p>
+                            </div>
+                            <span class="text-xs font-semibold tracking-widest uppercase text-teal-200">Sridhar H. Patel</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-teal-700 uppercase tracking-widest">Mindfulness & Focus</span>
+                            <span class="text-[11px] bg-teal-50 text-teal-800 px-2.5 py-0.5 rounded font-semibold">12 Pillars</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-1 font-serif text-stone-900">The Daily Mindful Pause</h3>
+                        <p class="text-xs font-semibold text-stone-500 mb-3 italic">365 Thought-Provoking Questions & Ancient Buddhist Wisdom for Calm, Clarity, and Focus</p>
+                        <p class="text-stone-600 text-sm mb-5 flex-grow leading-relaxed">
+                            Distills 2,500 years of Buddhist psychology into 60-second daily reflections, 12 Monthly Mindful Pillars, and classic Jataka parables to interrupt burnout.
+                        </p>
+                        <div class="text-[11px] text-stone-400 mb-4 border-t border-stone-100 pt-2">
+                            <div><strong>Paperback ISBN:</strong> 979-8-954002-04-1</div>
+                            <div><strong>Hardcover ISBN:</strong> 979-8-954002-05-8</div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="openBookModal('pause')" class="bg-stone-100 text-stone-800 py-2.5 px-3 rounded-lg hover:bg-stone-200 transition font-bold text-xs uppercase tracking-wider">
+                                Look Inside
+                            </button>
+                            <a href="https://www.amazon.com/s?k=9798954002041" target="_blank" rel="noopener" class="bg-teal-700 text-white py-2.5 px-3 rounded-lg hover:bg-teal-800 transition font-bold text-xs uppercase tracking-wider text-center shadow">
+                                Buy Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BOOK 4: HANUMAN -->
+                <div data-category="children" class="book-item bg-white rounded-2xl shadow-md overflow-hidden book-card border border-stone-100 flex flex-col">
+                    <div class="h-80 bg-gradient-to-br from-orange-600 via-amber-600 to-red-800 flex items-center justify-center relative group overflow-hidden p-6 text-center">
+                        <!-- Upload hanuman-cover.jpg to GitHub to automatically replace the styled cover below -->
+                        <img src="hanuman-cover.jpg" alt="HANUMAN Book Cover" class="absolute inset-0 h-full w-full object-cover z-10" onerror="this.style.display='none'">
+                        <div class="border border-yellow-200/50 rounded-lg p-5 w-full h-full flex flex-col justify-between text-white">
+                            <span class="text-[10px] uppercase tracking-widest text-yellow-200 font-bold">Meet the First Superhero</span>
+                            <div>
+                                <h4 class="text-3xl font-bold font-serif tracking-wider text-white mb-2">HANUMAN</h4>
+                                <div class="w-10 h-0.5 bg-yellow-300 mx-auto mb-2"></div>
+                                <p class="text-xs text-yellow-50 leading-snug">The Hanuman Chalisa: 40 Verses & Power Questions for Courage, Wisdom, and Inner Strength</p>
+                            </div>
+                            <span class="text-xs font-semibold tracking-widest uppercase text-yellow-200">Sridhar H. Patel</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-amber-700 uppercase tracking-widest">Children & Family</span>
+                            <span class="text-[11px] bg-amber-50 text-amber-800 px-2.5 py-0.5 rounded font-semibold">Ages 6–12+</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-1 font-serif text-stone-900">HANUMAN</h3>
+                        <p class="text-xs font-semibold text-stone-500 mb-3 italic">The Hanuman Chalisa: 40 Verses & Power Questions for Courage, Wisdom, and Inner Strength</p>
+                        <p class="text-stone-600 text-sm mb-5 flex-grow leading-relaxed">
+                            An illustrated family edition featuring all 40 verses in clear English transliteration, kid-friendly meanings, 120 Heart, Mind & Action Power Questions, and the 8 Superpowers.
+                        </p>
+                        <div class="text-[11px] text-stone-400 mb-4 border-t border-stone-100 pt-2">
+                            <div><strong>Paperback ISBN:</strong> 979-8-954002-06-5</div>
+                            <div><strong>Hardcover ISBN:</strong> 979-8-954002-07-2</div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="openBookModal('hanuman')" class="bg-stone-100 text-stone-800 py-2.5 px-3 rounded-lg hover:bg-stone-200 transition font-bold text-xs uppercase tracking-wider">
+                                Look Inside
+                            </button>
+                            <a href="https://www.amazon.com/s?k=9798954002065" target="_blank" rel="noopener" class="bg-amber-600 text-white py-2.5 px-3 rounded-lg hover:bg-amber-700 transition font-bold text-xs uppercase tracking-wider text-center shadow">
+                                Buy Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FREE READER RESOURCES & PRINTABLES SECTION -->
+    <section id="resources" class="py-12 container mx-auto px-6">
+        <div class="bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 text-white rounded-3xl p-8 md:p-14 shadow-lg">
+            <div class="max-w-3xl mx-auto text-center mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-orange-400">Included With Your Books</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-serif mt-2 mb-4">Free Reader Companion Guides & Printables</h2>
+                <p class="text-stone-300 text-base">
+                    Every GrowWisePress book is built for real-life action. Join our reader list below to receive instant access to our printable fridge sheets, habit trackers, and family reflection logs.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/10">
+                    <i class="fas fa-check-double text-2xl text-emerald-400 mb-3"></i>
+                    <h3 class="text-xl font-bold font-serif mb-2">The UNFED Fridge Kit</h3>
+                    <p class="text-stone-300 text-sm mb-4">Includes the 100-Day Master Check-Off Grid, the 5-Second Label Check Fridge Filter, and the Simple Protein Counter.</p>
+                    <a href="#subscribe" class="text-emerald-300 hover:text-emerald-200 text-xs font-bold uppercase tracking-wider">Get Free Printable &rarr;</a>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/10">
+                    <i class="fas fa-compass text-2xl text-orange-400 mb-3"></i>
+                    <h3 class="text-xl font-bold font-serif mb-2">7-Day Morning Reset</h3>
+                    <p class="text-stone-300 text-sm mb-4">Sample 7 days of morning questions and micro-practices from <em>Stillness in Motion</em> and <em>The Daily Mindful Pause</em>.</p>
+                    <a href="#subscribe" class="text-orange-300 hover:text-orange-200 text-xs font-bold uppercase tracking-wider">Get Free Sample &rarr;</a>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/10">
+                    <i class="fas fa-shield-heart text-2xl text-amber-400 mb-3"></i>
+                    <h3 class="text-xl font-bold font-serif mb-2">8-Tuesday Family Tracker</h3>
+                    <p class="text-stone-300 text-sm mb-4">Printable family reflection log and pronunciation guide from <em>HANUMAN</em> for bedtime routines and courage building.</p>
+                    <a href="#subscribe" class="text-amber-300 hover:text-amber-200 text-xs font-bold uppercase tracking-wider">Get Free Tracker &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUTHOR SPOTLIGHT SECTION -->
+    <section id="author" class="py-12 container mx-auto px-6">
+        <div class="glass-panel rounded-3xl p-8 md:p-14 shadow-sm border border-white max-w-4xl mx-auto">
+            <div class="text-center mb-6">
+                <span class="text-xs font-bold text-orange-600 uppercase tracking-widest">Meet the Author</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-stone-800 mt-1 font-serif">Sridhar H. Patel</h2>
+                <div class="w-16 h-1 bg-orange-500 mx-auto mt-3 rounded"></div>
+            </div>
+            <div class="space-y-4 text-stone-700 text-base md:text-lg leading-relaxed">
+                <p>
+                    <strong>Sridhar H. Patel</strong> is an author, professional, husband, and father dedicated to translating timeless wisdom and practical science into simple daily habits for modern life.
+                </p>
+                <p>
+                    Growing up surrounded by the quiet discipline of his parents, <strong>Bina and Hemendra Patel</strong>, and his two grandmothers—both of whom lived vibrant, active lives well past their nineties—Sridhar saw firsthand how daily mindfulness, purposeful work, and clean living build a life of lasting strength. After experiencing the fast rush and pressure of a demanding modern career himself, he returned to those foundational roots to reclaim his own clarity, energy, and peace of mind.
+                </p>
+                <p>
+                    Through his books—<em>UNFED</em>, <em>STILLNESS IN MOTION</em>, <em>THE DAILY MINDFUL PAUSE</em>, and <em>HANUMAN</em>—he bridges the gap between ancient philosophy and everyday vitality so readers of all ages can cultivate a calm mind, a strong body, and a purposeful legacy.
+                </p>
+                <p class="text-stone-800 font-semibold italic pt-2">
+                    Sridhar lives with his wife, Deval Patel, PhD, and their two sons, Taarush and Ishan, who remain his greatest inspiration.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT GROWWISEPRESS SECTION -->
+    <section id="about" class="py-10 container mx-auto px-6">
+        <div class="bg-white/85 backdrop-blur-md rounded-3xl p-10 md:p-14 text-center max-w-3xl mx-auto shadow-sm border border-orange-100">
+            <i class="fas fa-book-open-reader text-4xl text-orange-500 mb-5"></i>
+            <h2 class="text-3xl md:text-4xl font-bold text-stone-800 mb-4 font-serif">About GrowWisePress</h2>
+            <p class="text-orange-700 font-bold font-serif text-lg italic mb-6">
+                "Igniting Curiosity. Preserving Culture. Simple Truths for Real Growth."
+            </p>
+            <p class="text-stone-600 leading-relaxed mb-6 text-lg">
+                <strong>GrowWisePress</strong> is an independent publishing house dedicated to creating meaningful books for modern minds. Our mission is simple: to bridge the gap between timeless wisdom and today's generation. Whether it is sharing simple habits for lifelong health, translating ancient philosophy for the modern desk, or retelling cultural stories for children, every book we publish is designed to spark curiosity, strengthen the body, and inspire positive action across generations.
+            </p>
+            <p class="text-stone-700 font-bold uppercase tracking-widest text-xs">
+                We believe the best books help families grow wiser, stronger, and closer to their roots.
+            </p>
+        </div>
+    </section>
+
+    <!-- EMAIL SUBSCRIPTION SECTION -->
+    <section id="subscribe" class="py-12 text-center">
+        <div class="container mx-auto px-6">
+            <div class="subscribe-section rounded-3xl p-10 md:p-14 max-w-3xl mx-auto shadow-sm">
+                <h2 class="text-3xl md:text-4xl font-bold text-stone-800 mb-3 font-serif">Join Our Readers</h2>
+                <p class="text-stone-600 mb-8 text-lg max-w-xl mx-auto">
+                    Get notified when new books are released and receive our free printable habit trackers, fridge guides, and family mindfulness sheets.
+                </p>
+
+                <div class="subscribe-form bg-white p-2.5 rounded-xl shadow-sm border border-orange-200 max-w-xl mx-auto">
+                    <!-- Replace action="#" with your Formspree or MailerLite form link -->
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="if(this.action.includes('YOUR_FORM_ID')){event.preventDefault(); alert('Thank you for subscribing to GrowWisePress! (Connect your Formspree ID in index.html to receive emails automatically.)');}" class="flex flex-col sm:flex-row gap-2">
+                        <input type="email" name="email" placeholder="Enter your email address" class="flex-1 px-5 py-4 rounded-lg focus:outline-none focus:bg-orange-50 text-stone-700" required>
+                        <button type="submit" class="bg-orange-600 text-white px-8 py-4 rounded-lg font-bold hover:bg-orange-700 transition shadow-md uppercase tracking-wider text-sm">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+                <p class="text-xs text-stone-400 mt-4 italic">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-stone-900 text-white py-14 mt-auto relative z-10">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-3xl font-bold mb-2 font-serif tracking-wider">GrowWisePress</h3>
+            <p class="text-stone-400 text-sm italic mb-8">Igniting Curiosity. Preserving Culture. Simple Truths for Real Growth.</p>
+            <div class="flex justify-center space-x-8 mb-8">
+                <a href="mailto:GrowWisePress@gmail.com" class="text-stone-400 hover:text-orange-400 transition transform hover:scale-110" aria-label="Email Us">
+                    <i class="fas fa-envelope fa-xl"></i>
+                </a>
+                <a href="#books" class="text-stone-400 hover:text-orange-400 transition transform hover:scale-110" aria-label="Our Books">
+                    <i class="fas fa-book fa-xl"></i>
+                </a>
+            </div>
+            <p class="text-stone-400 text-sm mb-2">
+                Contact: <a href="mailto:GrowWisePress@gmail.com" class="underline hover:text-orange-300">GrowWisePress@gmail.com</a>
+            </p>
+            <p class="text-stone-500 text-xs">&copy; 2026 Sridhar H. Patel &amp; GrowWisePress. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE "LOOK INSIDE" BOOK MODAL -->
+    <div id="book-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 md:p-10 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeBookModal()" class="absolute top-5 right-5 text-stone-400 hover:text-stone-800 text-2xl font-bold" aria-label="Close Modal">
+                &times;
+            </button>
+            <span id="modal-category" class="text-xs font-bold uppercase tracking-widest text-orange-600"></span>
+            <h3 id="modal-title" class="text-3xl font-bold font-serif text-stone-900 mt-1 mb-1"></h3>
+            <p id="modal-subtitle" class="text-sm font-semibold text-stone-500 italic mb-5"></p>
+            <p id="modal-description" class="text-stone-700 text-sm md:text-base leading-relaxed mb-5"></p>
+
+            <h4 class="font-bold text-xs uppercase tracking-wider text-stone-800 mb-2">Inside This Book:</h4>
+            <ul id="modal-bullets" class="list-disc list-inside space-y-1.5 text-stone-600 text-sm mb-6"></ul>
+
+            <div id="modal-specs" class="bg-stone-50 p-4 rounded-xl text-xs text-stone-600 space-y-1 mb-6 border border-stone-200"></div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a id="modal-buy-link" href="#" target="_blank" rel="noopener" class="flex-1 bg-orange-600 text-white text-center py-3.5 rounded-xl font-bold uppercase tracking-wider text-xs hover:bg-orange-700 transition shadow">
+                    Find on Amazon
+                </a>
+                <button onclick="closeBookModal()" class="px-6 py-3.5 bg-stone-100 text-stone-700 rounded-xl font-bold uppercase tracking-wider text-xs hover:bg-stone-200 transition">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WEBSITE SCRIPTS (MODAL & FILTERS) -->
+    <script>
+        const BOOK_DATA = {
+            unfed: {
+                category: "Health & Habit Transformation • Ages 8 to 80",
+                title: "UNFED",
+                subtitle: "The 'No Body Cares' Plan to Escape the Food Trap, Build Simple Habits, and Reclaim Your Strength",
+                description: "The modern world wants you overfed, tired, and trapped. In UNFED, you will not find confusing medical jargon, starving crash diets, or expensive gym memberships. Instead, Sridhar H. Patel blends four generations of family longevity wisdom with 23 Simple Rules and a step-by-step 100-Day Action Plan written in plain, honest language.",
+                bullets: [
+                    "Escape the Food Trap: Use the 5-Second Label Check and Television Rule so fake snacks never trick you again.",
+                    "Build Simple Habits: Shrink your daily eating window, drink water before you plate, and walk 10 minutes after meals.",
+                    "Reclaim Your Strength: Protect your muscles with a green fiber shield and a clear daily protein target (0.7–1.0g per lb).",
+                    "True Food Freedom: Graduate from the exhausting Intellectual Diet to the calm, automatic Emotionless Diet.",
+                    "Bonus Tear-Out Fridge Guides: Includes the 100-Day Master Check-Off Grid, Fridge Food Filter, and Protein Counter."
+                ],
+                specs: "Author: Sridhar H. Patel | Publisher: GrowWisePress | Trim Size: 5.5\" x 8.5\" Digest | Paperback ISBN: 979-8-954002-00-3 | Hardcover ISBN: 979-8-954002-01-0",
+                buyLink: "https://www.amazon.com/s?k=9798954002003"
+            },
+            stillness: {
+                category: "365-Day Secular Desk Companion • Adults",
+                title: "Stillness in Motion",
+                subtitle: "365 Days of Ancient Bhagavad Gita Wisdom for a Calm Mind and Purposeful Living",
+                description: "In a world of constant deadlines and digital noise, most of us feel forced to choose between burning out in motion or retreating in exhaustion. Requiring zero prior background in Eastern philosophy or Sanskrit, Stillness in Motion translates all 18 chapters of the Bhagavad Gita into 365 days of practical psychology you can apply in three minutes each morning.",
+                bullets: [
+                    "365 Daily Mindset Resets: A sharp morning question paired with a clear modern verse adaptation and reflection.",
+                    "The Art of Detached Action: Give your best effort to work and family without anxiety over outcomes.",
+                    "Master the Three Energies: Recognize heaviness (Tamas) and frantic stress (Rajas) to return to clarity (Sattva).",
+                    "Reference Tools Included: Features a Thematic First-Aid Index for life challenges and a 24-term Sanskrit Glossary."
+                ],
+                specs: "Author: Sridhar H. Patel | Publisher: GrowWisePress | Trim Size: 8.5\" x 8.5\" Square (388 Pages) | Paperback ISBN: 979-8-954002-02-7 | Hardcover/eBook ISBN: 979-8-954002-03-4",
+                buyLink: "https://www.amazon.com/s?k=9798954002027"
+            },
+            pause: {
+                category: "Daily Self-Inquiry & Stress Management • Adults & Professionals",
+                title: "The Daily Mindful Pause",
+                subtitle: "365 Thought-Provoking Questions & Ancient Buddhist Wisdom for Calm, Clarity, and Focus",
+                description: "Between endless notifications and career demands, who has time to read a dense 300-page philosophy textbook? The Daily Mindful Pause distills 2,500 years of timeless Buddhist 'science of the mind' into effortless, 60-second daily reflections that sit right on your work desk or nightstand.",
+                bullets: [
+                    "365+ Daily Mindful Pauses: Bite-sized Socratic questions (including Feb 29) that interrupt autopilot stress.",
+                    "12 Monthly Mindful Pillars: Master Karma (Action), Sati (Focus), Anicca (Change), The Middle Way, and Upekkha (Calm).",
+                    "12 Classic Jataka Parables: Timeless storytelling at the start of every month.",
+                    "The Mindful Lexicon: A phonetic pronunciation and reference guide to 15 core Sanskrit and Pali concepts."
+                ],
+                specs: "Author: Sridhar H. Patel | Publisher: GrowWisePress | Trim Size: 6.0\" x 9.0\" Trade | Paperback ISBN: 979-8-954002-04-1 | Hardcover ISBN: 979-8-954002-05-8",
+                buyLink: "https://www.amazon.com/s?k=9798954002041"
+            },
+            hanuman: {
+                category: "Children's & Family Cultural Heritage • Ages 6–12 & Families",
+                title: "HANUMAN",
+                subtitle: "The Hanuman Chalisa: 40 Verses & Power Questions for Courage, Wisdom, and Inner Strength",
+                description: "Long before modern comic books, there was Hanuman—a legendary hero who could lift mountains and leap across oceans. Yet his greatest superpower was his focused mind, humble service, and fearless heart. This 52-page illustrated family edition makes the classic 40 verses of the Hanuman Chalisa accessible, interactive, and inspiring for the next generation.",
+                bullets: [
+                    "Complete 40 Verses & Simple Translations: Clean, hyphen-free Romanized English script with a 12-word pronunciation guide.",
+                    "120 Interactive Power Questions: Thought-provoking Heart, Mind, and Action prompts under every verse.",
+                    "The 5 Great Adventures & 8 Superpowers (Ashta Siddhis): Story summaries plus practical ways to practice self-control.",
+                    "Family First-Aid Index & 8-Tuesday Tracker: Quick-reference index for overcoming fear or distraction."
+                ],
+                specs: "Author: Sridhar H. Patel | Publisher: GrowWisePress | Trim Size: 8.5\" x 8.5\" Square Illustrated (52 Pages) | Paperback ISBN: 979-8-954002-06-5 | Hardcover ISBN: 979-8-954002-07-2",
+                buyLink: "https://www.amazon.com/s?k=9798954002065"
+            }
+        };
+
+        function openBookModal(key) {
+            const book = BOOK_DATA[key];
+            if (!book) return;
+            document.getElementById('modal-category').textContent = book.category;
+            document.getElementById('modal-title').textContent = book.title;
+            document.getElementById('modal-subtitle').textContent = book.subtitle;
+            document.getElementById('modal-description').textContent = book.description;
+            document.getElementById('modal-specs').textContent = book.specs;
+            document.getElementById('modal-buy-link').href = book.buyLink;
+
+            const ul = document.getElementById('modal-bullets');
+            ul.innerHTML = '';
+            book.bullets.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                ul.appendChild(li);
+            });
+
+            document.getElementById('book-modal').classList.remove('hidden');
+        }
+
+        function closeBookModal() {
+            document.getElementById('book-modal').classList.add('hidden');
+        }
+
+        function filterBooks(category) {
+            const items = document.querySelectorAll('.book-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-orange-600', 'text-white');
+                btn.classList.add('bg-white', 'text-stone-700');
+            });
+
+            const activeBtn = document.getElementById('filter-' + category);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-white', 'text-stone-700');
+                activeBtn.classList.add('bg-orange-600', 'text-white');
+            }
+
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
